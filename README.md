@@ -23,7 +23,7 @@
 * yum install ruby
 * gem install sass 
 
-**Screenshot:**
+**Screenshot**
 
 ![screenshot](http://52.25.232.6/media/screenshot.png)
 
@@ -39,6 +39,8 @@
 * [Sass](http://sass-lang.com/)
 * [Apache](http://httpd.apache.org/docs/2.4/) 
 * [Ruby](https://www.ruby-lang.org/en/)
+* [IE Emulation Mode](https://support.microsoft.com/en-us/kb/2536204)
+* [UNIX Systems - IE Emulation](https://ieonchrome.com/)
 * [Amazon Web Services](https://aws.amazon.com/?nc2=h_lg)
 
 
