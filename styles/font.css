@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'elliemae';
+	src:url('/fonts/elliemae.eot?-f775nl');
+	src:url('/fonts/elliemae.eot?-f775nl#iefix') format('embedded-opentype'),
+		url('/fonts/elliemae.ttf?-f775nl') format('truetype'),
+		url('/fonts/elliemae.woff?-f775nl') format('woff'),
+		url('/fonts/elliemae.svg?-f775nl#elliemae') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'elliemae';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-search:before {
+	content: "\e629";
+	font-size: 2em;
+	color:red;
+}
