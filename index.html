@@ -6,30 +6,30 @@
 </head>
 <body>		
 <div id="nav">
-	<ul>
+	<ul class="navleft">
 		<img src="/media/elliemae.png">
 	</ul>
-	<ul>
-		<a href="#">SOLUTIONS</a>
-		<a href="#">SERVICES & SUPPORT</a>
-		<a href="#">PARTNERS</a>
-		<a href="#">RESOURCES</a>
-		<a href="#">ABOUT</a>
-		<a href="#">BLOG</a>
-		<a href="#">REQUEST DEMO</a>
+	<ul class="navright">
+		<a class="navlink" href="#">SOLUTIONS</a>
+		<a class="navlink" href="#">SERVICES & SUPPORT</a>
+		<a class="navlink" href="#">PARTNERS</a>
+		<a class="navlink" href="#">RESOURCES</a>
+		<a class="navlink" href="#">ABOUT</a>
+		<a class="navlink" href="#">BLOG</a>
+		<a class="navlink" href="#">REQUEST DEMO</a>
 		<span></span>
 	</ul>
 </div>
 <h1>Order Confirmation</h1>
-<div id="order">
+<div id="order" class="container">
 	<div>
-		<span>ORDER#WEB35861</span>
-		<span>Placed on September 03, 2015</span>
+		<span class="aln-lft txt-cap">ORDER#WEB35861</span>
+		<span class="aln-rgt"> Placed on September 03, 2015</span>
 	</div>	
 	<div>
-		<span><em>STATUS</em> Being processed</span>
-		<span><em>AMOUNT</em> $1050.00</span>
-		<span><em>VIA</em> Online Delivery</span>
+		<span class="aln-lft"><em>STATUS</em> Being processed</span>
+		<span class="aln-ctr"><em>AMOUNT</em> $1050.00</span>
+		<span class="aln-rgt"><em>VIA</em> Online Delivery</span>
 	</div>	
 	<div>
 		<table>
@@ -84,9 +84,9 @@
 		</table>
 	</div>
 </div>	
-<div id="payment">
+<div id="payment" class="container">
 	<table>
-		<caption>PAYMENT INFORMATION</caption>
+		<caption class="aln-lft txt-cap">PAYMENT INFORMATION</caption>
 		<tbody>					
 			<tr>
 				<td>Payment Type:</td>
@@ -103,53 +103,53 @@
 		</tbody>
 	</table>
 </div>
-<div id="items">
+<div id="items" class="container">
 	<table>
 		<thead>
 			<tr>
 				<th></th>
-				<th>ITEM DETAILS</th>
-				<th>QTY</th>
+				<th class="aln-lft">ITEM DETAILS</th>
+				<th class="aln-ctr">QTY</th>
 				<th>PRICE</th>
 				<th>TOTAL</th>
 			</tr>
 		</thead>
 		<tbody>					
 			<tr>
-				<td>A0-PACKAGE B</td>
-				<td>Multifamily Lending Package</td>
-				<td>1</td>
+				<td class="aln-lft lgt-blue">A0-PACKAGE B</td>
+				<td class="aln-lft">Multifamily Lending Package</td>
+				<td class="aln-ctr drk-blue">1</td>
+				<td class="lgt-blue">$700.00</td>
 				<td>$700.00</td>
-				<td>$700.00</td>
 			</tr>
 			<tr>
-				<td>A0-VIRGINIA</td>
-				<td>State Compliance - VA</td>
-				<td>1</td>
+				<td class="aln-lft lgt-blue">A0-VIRGINIA</td>
+				<td class="aln-lft">State Compliance - VA</td>
+				<td class="aln-ctr drk-blue">1</td>
+				<td class="lgt-blue">$350.00</td>
 				<td>$350.00</td>
-				<td>$350.00</td>
 			</tr>
-			<tr>
+			<tr class="row-total">
 				<td colspan="3"></td>
-				<td>Sub-Total:</td>
-				<td>$1050.00</td>
+				<td class="aln-rgt drk-blue">Sub-Total:</td>
+				<td class="aln-rgt lgt-blue">$1050.00</td>
 			</tr>
-			<tr>
+			<tr class="row-total">
 				<td colspan="3"></td>
-				<td>Shipping:</td>
-				<td>$0.00</td>
+				<td class="aln-rgt drk-blue">Shipping:</td>
+				<td class="aln-rgt lgt-blue">$0.00</td>
 			</tr>
-			<tr>
+			<tr class="row-total">
 				<td colspan="3"></td>
-				<td>Tax:</td>
-				<td>$0.00</td>
+				<td class="aln-rgt drk-blue">Tax:</td>
+				<td class="aln-rgt lgt-blue">$0.00</td>
 			</tr>
-			<tr>
+			<tr class="row-total">
 				<td colspan="3"></td>
-				<td>Order Total:</td>
-				<td>$1500.00</td>
+				<td class="aln-rgt drk-blue">Order Total:</td>
+				<td class="aln-rgt lgt-blue">$1500.00</td>
 			</tr>
-			<tr>
+			<tr class="row-total">
 				<td colspan="5">
 					<button>RETURN TO SHOPPING</button>
 				</td>

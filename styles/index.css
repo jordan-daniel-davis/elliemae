@@ -1,62 +1,102 @@
-@font-face {
-  font-family: 'elliemae';
-  src: url("/fonts/elliemae.eot?-f775nl");
-  src: url("/fonts/elliemae.eot?-f775nl#iefix") format("embedded-opentype"), url("/fonts/elliemae.ttf?-f775nl") format("truetype"), url("/fonts/elliemae.woff?-f775nl") format("woff"), url("/fonts/elliemae.svg?-f775nl#elliemae") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+/* 
+	
+	SASS VARIABLIES
+	
+*/
+/* 
+	
+	SASS MIXINS
+	
+*/
+/* 
+	
+	IE8 SUPPORT
+	
+*/
 .ie8 > body {
   min-width: 1200px; }
 
 .ie8 > body > #nav {
   min-width: 1200px; }
 
-body {
-  margin: 0 !important; }
-
+/* 
+	
+	GLOBALS
+	
+*/
 h1, h2, h3, h4, h5, h6, p, a, span, table, button {
   -webkit-font-smoothing: antialiased;
   font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",sans-serif; }
 
-h1 {
-  font-size: 3em;
-  color: #00addc;
-  margin: 3em 1em 1em;
-  text-align: left; }
+body {
+  margin: 0 !important; }
 
-body > div {
+em {
+  color: #006699;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'elliemae';
+  src: url("/fonts/elliemae.eot?-f775nl");
+  src: url("/fonts/elliemae.eot?-f775nl#iefix") format("embedded-opentype"), url("/fonts/elliemae.ttf?-f775nl") format("truetype"), url("/fonts/elliemae.woff?-f775nl") format("woff"), url("/fonts/elliemae.svg?-f775nl#elliemae") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* 
+	
+	CLASSES
+	
+*/
+.aln-lft {
+  text-align: left !important; }
+
+.aln-ctr {
+  text-align: center !important; }
+
+.aln-rgt {
+  text-align: right !important; }
+
+.txt-cap {
+  text-transform: capitalize; }
+
+.lgt-blue {
+  color: #00addc; }
+
+.drk-blue {
+  color: #006699;
+  font-weight: bold; }
+
+.container {
   margin: 0 3em 4em; }
 
+/* 
+	
+	NAVBAR
+	
+*/
 #nav {
   left: 0;
   right: 0;
   top: 0;
+  margin: 0;
   z-index: 999;
   position: fixed;
   box-sizing: border-box;
-  margin: 0;
   background-color: #fff;
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6); }
 
-#nav > ul {
-  box-sizing: border-box;
-  float: left; }
-
-#nav > ul:first-child {
+.navleft {
   padding-left: 3em;
   text-align: left;
   width: 20%; }
 
-#nav > ul:first-child + ul {
+.navright {
   padding-right: 3em;
   width: 80%;
   text-align: right; }
 
-#nav > ul > img {
-  cursor: pointer; }
-
-#nav > ul > a {
+.navlink {
   color: #939598;
   padding: 0 .5em;
   text-decoration: none;
@@ -64,32 +104,49 @@ body > div {
   text-transform: capitalize;
   line-height: 4em; }
 
-#nav > ul > a:hover {
+.navlink:hover {
   color: #00addc; }
 
-#nav > ul > a:last-of-type {
-  color: #00addc; }
+#nav > ul {
+  float: left;
+  box-sizing: border-box; }
 
-#nav > ul > a:last-of-type:hover {
-  color: #939598; }
-
-#nav > ul > * {
+#nav img {
   cursor: pointer; }
 
-#nav > ul > span:before {
+#nav span {
+  cursor: pointer; }
+
+#nav span:before {
   padding: 0 .5em;
   font-family: 'elliemae';
   content: "\e629";
   color: #939598;
   font-size: 1em; }
 
-#nav > ul > span:hover:before {
+#nav span:hover:before {
   color: #00addc; }
 
-#order > div:nth-of-type(1) {
+/* 
+	
+	HEADER
+	
+*/
+h1 {
+  font-size: 3em;
+  color: #00addc;
+  margin: 3em 1em 1em;
+  text-align: left; }
+
+/* 
+	
+	ORDER
+	
+*/
+#order div {
   overflow-y: auto; }
 
-#order > div:first-child > span {
+#order div:first-child span {
   color: #fff;
   line-height: 3em;
   width: 50%;
@@ -98,17 +155,7 @@ body > div {
   background-color: #006699;
   box-sizing: border-box; }
 
-#order > div:first-child > span {
-  text-align: left;
-  text-transform: capitalize; }
-
-#order > div:first-child > span + span {
-  text-align: right; }
-
-#order > div:first-child + div {
-  overflow-y: auto; }
-
-#order > div:first-child + div > span {
+#order div + div span {
   color: #939598;
   line-height: 4em;
   float: left;
@@ -116,41 +163,21 @@ body > div {
   box-sizing: border-box;
   padding: 0 1em; }
 
-#order > div:first-child + div > span > * {
-  color: #006699;
-  font-style: normal; }
-
-#order > div:first-child + div > span:first-child {
-  text-align: left; }
-
-#order > div:first-child + div > span:first-child + span {
-  text-align: center; }
-
-#order > div:first-child + div > span + span + span {
-  text-align: right; }
-
-#order > div:first-child + div + div {
-  overflow-y: auto; }
-
-#order > div:first-child + div + div > table {
+#order table {
   width: 49%;
-  height: 200px;
   float: left;
   padding: 1em;
   box-sizing: border-box;
   background: #e7e7e8;
   color: #939598; }
 
-#order > div:first-child + div + div > table > tbody > tr > td:first-child {
-  font-weight: bold; }
-
-#order > div:first-child + div + div > table:first-child {
+#order table:first-child {
   margin-right: 1%; }
 
-#order > div:first-child + div + div > table:first-child + table {
+#order table + table {
   margin-left: 1%; }
 
-#order > div:first-child + div + div > table > caption {
+#order caption {
   color: #006699;
   font-weight: bold;
   text-transform: capitalize;
@@ -161,107 +188,77 @@ body > div {
 
 /* 
 	
-	START PAYMENTS 
+	PAYMENT
 	
 */
 #payment > table {
-  border-collapse: collapse;
-  border-top: 1px solid #006699;
   width: 100%;
+  color: #939598;
   box-sizing: border-box;
-  color: #939598; }
+  border-collapse: collapse;
+  border-top: 1px solid #006699; }
 
-#payment > table > caption {
+#payment caption {
   line-height: 4em;
-  text-transform: capitalize;
-  color: #006699;
-  text-align: left; }
+  color: #006699; }
 
-#payment > table > tbody > tr {
+#payment tr {
   line-height: 3em;
-  border-bottom: .2em solid white;
   background: #e7e7e8;
-  white-space: nowrap; }
+  border-bottom: .2em solid white; }
 
-#payment > table > tbody > tr > td {
+#payment td {
   padding: 0 1em; }
 
-#payment > table > tbody > tr > td:first-child {
-  font-weight: bold; }
-
+/* 
+	
+	ITEMS 
+	
+*/
 #items > table {
   width: 100%;
-  border-collapse: collapse;
+  color: #939598;
   box-sizing: border-box;
-  color: #939598; }
+  border-collapse: collapse; }
 
-#items > table > thead {
+#items thead {
   text-align: right;
   line-height: 4em;
   color: #006699;
+  background-color: #fff !important;
   text-transform: capitalize;
   border-bottom: 1px solid #006699; }
 
-#items > table > thead > tr > th {
+#items thead tr {
+  padding: 0 1em;
+  background-color: #fff; }
+
+#items th {
   padding: 0 1em; }
 
-#items > table > thead > tr > th:first-child + th {
-  text-align: left; }
-
-#items > table > thead > tr > th:first-child + th + th {
-  text-align: center; }
-
-#items > table > thead > tr > th:first-child + th + th ~ th {
-  padding: 0 2em; }
-
-#items > table > tbody > tr {
+#items tr {
   line-height: 3em;
-  text-align: right;
-  background: #e7e7e8;
-  white-space: nowrap;
+  background-color: #e7e7e8;
   border-bottom: .2em solid white; }
 
-#items > table > tbody > tr > td {
+#items td {
+  text-align: right;
   padding: 0 1em; }
 
-#items > table > tbody > tr > td:first-child {
-  text-align: left;
-  color: #00addc; }
-
-#items > table > tbody > tr > td:first-child + td {
-  text-align: left; }
-
-#items > table > tbody > tr > td:first-child + td + td {
-  text-align: center;
-  color: #006699;
-  font-weight: bold; }
-
-#items > table > tbody > tr > td:first-child + td + td + td {
-  color: #00addc; }
-
-#items > table > tbody > tr > td[colspan="3"] {
-  background: #fff;
+#items .row-total {
+  background-color: #fff;
   line-height: 2em; }
 
-#items > table > tbody > tr > td[colspan="3"] + td {
-  background: #fff;
-  text-align: right;
-  color: #006699;
-  font-weight: bold;
-  line-height: 2em; }
-
-#items > table > tbody > tr > td[colspan="3"] + td + td {
-  background: #fff;
-  text-align: right;
-  color: #00addc;
-  font-weight: normal;
-  line-height: 2em; }
-
-#items > table > tbody > tr > td[colspan="5"] {
+td[colspan="5"] {
   line-height: 3em;
   background: #fff;
   text-align: right; }
 
+/* 
+	
+	START BUTTON
+	
+*/
 button {
   margin-top: 1em;
   padding: .2em 4em;
@@ -282,6 +279,11 @@ button:active {
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); }
 
+/* 
+	
+	MEDIA QUERIES
+	
+*/
 @media screen and (max-width: 1200px) {
   #nav > ul > span:before {
     content: "\e800";

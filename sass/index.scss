@@ -1,20 +1,25 @@
+/* 
+	
+	SASS VARIABLIES
+	
+*/
+$tbl-gry: #e7e7e8;
+$drk-blue: #006699;
+$lgt-gry: #939598;
+$lgt-blue: #00addc;
 $shadow: 0 1px 5px rgba(0,0,0,.6);
-$light-blue: #00addc;
-$table-gry: #e7e7e8;
-$dark-blue: #006699;
-$light-gry: #939598;
-@mixin shadow{
-	-moz-box-shadow: $shadow;
-	-webkit-box-shadow: $shadow;
-	box-shadow: $shadow;
-}
+/* 
+	
+	SASS MIXINS
+	
+*/
 @mixin screen_1200{
-	#nav>ul>span:before{
+	#nav > ul > span:before{
 		content: "\e800";
 		font-size: 2em;
 		line-height: 2em;
 	}
-	#nav>ul>a{
+	#nav > ul > a{
 		display: none;
 	}
 }
@@ -26,29 +31,38 @@ $light-gry: #939598;
 		min-width: 795px;
 
 	}
-	#order>div:first-child+div+div>table{
+	#order > div:first-child+div+div > table{
 		width: 100%;
 		height: 200px;
 		padding: 1em;
 		box-sizing: border-box;
-		background: $table-gry;
-		color: $light-gry;
+		background: $tbl-gry;
+		color: $lgt-gry;
 	}
-	#order>div:first-child+div+div>table:first-child{
+	#order > div:first-child+div+div > table:first-child{
 		margin-right: 0;
 		margin-bottom: 1em;
 	}
-	#order>div:first-child+div+div>table:first-child+table{
+	#order > div:first-child+div+div > table:first-child+table{
 		margin-left: 0;
 	}
 }
 @mixin ie_support{
-	.ie8>body{
+	.ie8 > body{
 		min-width: 1200px;
 	}
-	.ie8>body>#nav{
+	.ie8 > body > #nav{
 		min-width: 1200px;
 	}	
+}
+@mixin shadow{
+	-moz-box-shadow: $shadow;
+	-webkit-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+@mixin font{
+    -webkit-font-smoothing: antialiased;
+	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;  
 }
 @mixin button{
 	margin-top: 1em;
@@ -66,6 +80,27 @@ $light-gry: #939598;
 	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+/* 
+	
+	IE8 SUPPORT
+	
+*/
+@include ie_support;
+/* 
+	
+	GLOBALS
+	
+*/
+h1,h2,h3,h4,h5,h6,p,a,span,table,button{
+	@include font;
+}
+body{
+	margin: 0 !important;
+}
+em{
+	color: $drk-blue;
+	font-style: normal;	
+}
 @font-face {
 	font-family: 'elliemae';
 	src:url('/fonts/elliemae.eot?-f775nl');
@@ -76,259 +111,223 @@ $light-gry: #939598;
 	font-weight: normal;
 	font-style: normal;
 }
-@include ie_support;
-body{
-	margin: 0 !important;
+/* 
+	
+	CLASSES
+	
+*/
+.aln-lft{
+	text-align: left !important;
 }
-h1,h2,h3,h4,h5,h6,p,a,span,table,button{
-    -webkit-font-smoothing: antialiased;
-	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;  
+.aln-ctr{
+	text-align: center !important;
 }
-h1{
-	font-size: 3em;
-	color: $light-blue;
-	margin: 3em 1em 1em;
-    text-align: left;
+.aln-rgt{
+	text-align: right !important;
 }
-body>div{
+.txt-cap{
+	text-transform: capitalize;
+}
+.lgt-blue{
+	color: $lgt-blue;
+}
+.drk-blue{
+	color: $drk-blue;
+	font-weight: bold;
+}
+.container{
 	margin: 0 3em 4em;
 }
+/* 
+	
+	NAVBAR
+	
+*/
 #nav{
 	left:0; 
 	right:0; 
 	top:0;
+	margin: 0;
     z-index: 999;
 	position: fixed;
 	box-sizing: border-box;
-	margin: 0;
 	background-color: #fff;
 	@include shadow;
 }
-#nav>ul{
-    box-sizing: border-box;
-	float: left;
-}
-#nav>ul:first-child{
+.navleft{
 	padding-left: 3em;
 	text-align: left;
 	width: 20%;
 }
-#nav>ul:first-child+ul{
+.navright{
 	padding-right: 3em;
 	width: 80%;
 	text-align: right;
 }
-#nav>ul>img{
-	cursor: pointer;
-}
-#nav>ul>a{
-	color: $light-gry;
+.navlink{
+	color: $lgt-gry;
     padding: 0 .5em;
     text-decoration: none;
 	cursor: pointer !important;
 	text-transform: capitalize;
 	line-height: 4em;
 }
-#nav>ul>a:hover{
-	color: $light-blue;
+.navlink:hover{
+	color: $lgt-blue;
 }
-#nav>ul>a:last-of-type{
-	color: $light-blue;
+#nav > ul{
+	float: left;
+	box-sizing: border-box;
 }
-#nav>ul>a:last-of-type:hover{
-	color: $light-gry;
-}
-#nav>ul>*{
+#nav img{
 	cursor: pointer;
 }
-#nav>ul>span:before{
+#nav span{
+	cursor: pointer;
+}
+#nav span:before{
 	padding: 0 .5em;
 	font-family: 'elliemae';
 	content: "\e629";
-	color: $light-gry;
+	color: $lgt-gry;
 	font-size: 1em;
 }
-#nav>ul>span:hover:before{
-	color: $light-blue;
+#nav span:hover:before{
+	color: $lgt-blue;
 }
-
-#order>div:nth-of-type(1){
+/* 
+	
+	HEADER
+	
+*/
+h1{
+	font-size: 3em;
+	color: $lgt-blue;
+	margin: 3em 1em 1em;
+    text-align: left;
+}
+/* 
+	
+	ORDER
+	
+*/
+#order div{
 	overflow-y: auto;
 }
-#order>div:first-child>span{
+#order div:first-child span{
 	color: #fff;
 	line-height: 3em;
 	width: 50%;
 	float: left;
 	padding: 0 1em;
-	background-color: $dark-blue;
+	background-color: $drk-blue;
 	box-sizing: border-box;
 }
-#order>div:first-child>span{
-	text-align: left;
-	text-transform: capitalize;
-}
-#order>div:first-child>span+span{
-	text-align: right;
-}
-#order>div:first-child+div{
-	overflow-y: auto;
-}
-#order>div:first-child+div>span{
-	color: $light-gry;
+
+#order div+div span{
+	color: $lgt-gry;
 	line-height: 4em;
 	float: left;
 	width: 33.33333333%;
 	box-sizing: border-box;
 	padding: 0 1em;
 }
-#order>div:first-child+div>span>*{
-	color: $dark-blue;
-	font-style: normal;	
-}
-#order>div:first-child+div>span:first-child{
-	text-align: left;
-}
-#order>div:first-child+div>span:first-child+span{
-	text-align: center;
-}
-#order>div:first-child+div>span+span+span{
-	text-align: right;
-}
-#order>div:first-child+div+div{
-	overflow-y: auto;
-}
-#order>div:first-child+div+div>table{
+#order table{
 	width: 49%;
-	height: 200px;
 	float: left;
 	padding: 1em;
 	box-sizing: border-box;
-	background: $table-gry;
-	color: $light-gry;
+	background: $tbl-gry;
+	color: $lgt-gry;
 }
-#order>div:first-child+div+div>table>tbody>tr>td:first-child{
-	font-weight: bold;
-}
-#order>div:first-child+div+div>table:first-child{
+#order table:first-child{
 	margin-right: 1%;
 }
-#order>div:first-child+div+div>table:first-child+table{
+#order table+table{
 	margin-left: 1%;
 }
-#order>div:first-child+div+div>table>caption{
-	color: $dark-blue;
+#order caption{
+	color: $drk-blue;
 	font-weight: bold;
     text-transform: capitalize;
 	padding: 1em 1em 0;
 	text-align: left;
-	border-top: 1px solid $dark-blue;
-	background: $table-gry;
+	border-top: 1px solid $drk-blue;
+	background: $tbl-gry;
 }
 /* 
 	
-	START PAYMENTS 
+	PAYMENT
 	
 */
-#payment>table{
-	border-collapse: collapse;
-	border-top: 1px solid $dark-blue;
+#payment > table{
 	width: 100%;
+	color: $lgt-gry;
     box-sizing: border-box;
-	color: $light-gry;
+	border-collapse: collapse;
+	border-top: 1px solid $drk-blue;
 }
-#payment>table>caption{
+#payment caption{
 	line-height: 4em;
-	text-transform: capitalize;
-	color: $dark-blue;
-	text-align: left;
+	color: $drk-blue;
 }
-#payment>table>tbody>tr{
+#payment tr{
     line-height: 3em;	
+    background: $tbl-gry;
     border-bottom: .2em solid white;
-    background: $table-gry;
-    white-space: nowrap;
-
 }
-#payment>table>tbody>tr>td{
-    padding: 0 1em;
+#payment td{
+	padding: 0 1em;
 }
-#payment>table>tbody>tr>td:first-child{
-	font-weight: bold;
-}
+/* 
+	
+	ITEMS 
+	
+*/
 #items>table{
 	width: 100%;
-	border-collapse: collapse;
+    color: $lgt-gry; 
     box-sizing: border-box;
-    color: $light-gry; 
+	border-collapse: collapse;
 }
-#items>table>thead{
+#items thead{
 	text-align: right;
 	line-height: 4em;
-	color: $dark-blue;
+	color: $drk-blue;
+	background-color: #fff !important;
 	text-transform: capitalize;
-	border-bottom: 1px solid $dark-blue;	
+	border-bottom: 1px solid $drk-blue;	
 }
-#items>table>thead>tr>th{
+#items thead tr{
+	padding: 0 1em;
+	background-color: #fff;
+}
+#items th{
 	padding: 0 1em;
 }
-#items>table>thead>tr>th:first-child+th{
-	text-align: left;
-}
-#items>table>thead>tr>th:first-child+th+th{
-	text-align: center;
-}
-#items>table>thead>tr>th:first-child+th+th~th{
-	padding: 0 2em;
-}
-#items>table>tbody>tr{
+#items tr{
 	line-height: 3em;
-	text-align: right;
-	background: $table-gry;
-	white-space: nowrap;
+	background-color: $tbl-gry;
     border-bottom: .2em solid white;
 }
-#items>table>tbody>tr>td{
+#items td{
+	text-align: right;
 	padding: 0 1em;
 }
-#items>table>tbody>tr>td:first-child{
-	text-align: left;	
-	color: $light-blue;
-}
-#items>table>tbody>tr>td:first-child+td{
-	text-align: left;
-}
-#items>table>tbody>tr>td:first-child+td+td{
-	text-align: center;
-	color: $dark-blue;
-	font-weight: bold;
-}
-#items>table>tbody>tr>td:first-child+td+td+td{
-	color: $light-blue;
-}
-#items>table>tbody>tr>td[colspan="3"]{
-	background: #fff;
+#items .row-total{
+	background-color: #fff;
 	line-height: 2em;
 }
-#items>table>tbody>tr>td[colspan="3"]+td{
-	background: #fff;
-	text-align: right;
-	color: $dark-blue;
-	font-weight: bold;
-	line-height: 2em;
-}
-#items>table>tbody>tr>td[colspan="3"]+td+td{
-	background: #fff;
-	text-align: right;
-	color: $light-blue;
-	font-weight: normal;
-	line-height: 2em;
-}
-#items>table>tbody>tr>td[colspan="5"]{
+td[colspan="5"]{
 	line-height: 3em;
 	background: #fff;
 	text-align: right;
 }
+/* 
+	
+	START BUTTON
+	
+*/
 button{
 	@include button;
 	background-color: #f26522;
@@ -339,6 +338,11 @@ button:hover{
 button:active{
 	@include button_active;
 }
+/* 
+	
+	MEDIA QUERIES
+	
+*/
 @media screen and (max-width:1200px){
 	@include screen_1200;
 
